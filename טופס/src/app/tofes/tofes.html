@@ -1,0 +1,22 @@
+<p>טופס הרשמה</p>
+<form #userForm="ngForm" (ngSubmit)="print()" style="display: flex; flex-direction: column; gap: 10px; width: 300px;">
+  
+
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <label for="username">שם משתמש:</label>
+    <input id="username" name="username" [(ngModel)]="user.username" required>
+  </div>
+
+  
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <label for="email">אימייל:</label>
+    <input id="email" name="email" [(ngModel)]="user.email" type="email" required>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <label for="agree">הסכמה לתנאי שימוש:</label>
+    <input id="agree" name="agree" type="checkbox" [(ngModel)]="user.agree" required>
+  </div>
+
+  <button type="submit" [disabled]="!userForm.valid">שלח</button>
+</form>
